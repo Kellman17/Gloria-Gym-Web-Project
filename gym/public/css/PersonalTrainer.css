@@ -1,0 +1,1045 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #333;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.sidebar h4 {
+    color: #FFD700;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.sidebar-link {
+    display: block;
+    color: #fff;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar-link:hover {
+    background-color: #FFD700;
+    color: #333;
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+    background-color: #121212;
+}
+
+.content-section {
+    display: none;
+}
+
+.active-section {
+    display: block;
+}
+
+/* Profile Card Styling */
+.profile-card {
+    background-color: #1c1c1c;
+    padding: 40px; /* Menambah padding */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.profile-img {
+    width: 200px; /* Ukuran foto lebih besar */
+    height: 200px; /* Ukuran foto lebih besar */
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #FFD700; /* Border lebih tebal */
+}
+
+.profile-card h2 {
+    font-size: 2.5rem; /* Font lebih besar */
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.profile-card p {
+    font-size: 1.3rem; /* Ukuran font teks lebih besar */
+    margin: 15px 0;
+}
+
+.edit-profile .btn-edit {
+    background-color: #FFD700;
+    color: black;
+    font-size: 1.5rem; /* Ukuran font button lebih besar */
+    font-weight: bold;
+    padding: 15px 30px; /* Ukuran button lebih besar */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-profile .btn-edit:hover {
+    color: white;
+    background-color: #51440d; /* Warna hover lebih gelap */
+}
+
+
+
+/* Rating Section */
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rating .fa-star, .rating .fa-star-half-alt {
+    color: #FFD700; /* Warna emas */
+    font-size: 1.5rem; /* Ukuran bintang */
+    margin: 0 2px;
+}
+
+.rating .empty-star {
+    color: #ccc; /* Warna abu-abu untuk bintang kosong */
+    font-size: 1.5rem;
+}
+
+.rating-text {
+    font-size: 1.2rem;
+    color: #FFD700;
+    margin-left: 10px;
+}
+/* Styling untuk modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0; /* Awalnya transparan */
+
+}
+.modal.show {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+
+}
+
+/* Ketika modal ditutup */
+.modal.hide {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+/* Animasi masuk (fade in) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9); /* Zoom lebih kecil */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1); /* Normal */
+    }
+}
+
+/* Animasi keluar (fade out) */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1); /* Normal */
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9); /* Zoom lebih kecil */
+    }
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    width: 50%;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Full black modal title */
+.modal-title {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: -20px -20px 20px -20px;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.8rem;
+}
+
+/* Styling untuk form */
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    width: 30%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.form-row input[type="text"],
+.form-row input[type="number"],
+.form-row input[type="file"] {
+    width: 50%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-row textarea{
+    width: 600px;
+    padding: 10px;
+    font-size: 20px;
+    border: 4px solid black;
+    border-radius: 5px;
+    resize: none;
+}
+.form-row input:focus {
+    border-color: #FFD700;
+    outline: none;
+}
+
+/* Image preview styling */
+/* Styling untuk form-row khusus Foto PT */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 0; /* Jarak antara preview dan input file */
+}
+
+.image-preview {
+    text-align: center;
+    margin-left: 20px;
+}
+
+.image-preview img {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    object-fit: cover;
+}
+
+.file-input-container input[type="file"] {
+    margin-right: 70px;
+    width: 40%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.file-input-container input:focus {
+    border-color: #FFD700;
+    outline: none;
+}
+.file-input-container span#file-name {
+    display: block;
+    margin-right: 40px;
+    margin-top: 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Tombol */
+/* Center and equal width for buttons */
+.form-row.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+}
+
+button {
+    width: 200px; /* Equal width */
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #40ce20;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    color: white;
+    background-color: #076b22;
+}
+
+.btn-cancel {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f92929;
+    color: black;
+    margin-left: 10px;
+}
+
+.btn-cancel:hover {
+    color: white;
+    background-color: #560404;
+}
+
+/* Styling Card Jadwal */
+.schedule-card {
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-card h4 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #FFD700;
+    text-align: center;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table th, .schedule-table td {
+    padding: 12px 20px;
+    text-align: left;
+    border: 1px solid #ddd;
+
+}
+
+.schedule-table th {
+    background-color: #000000;
+    color: #fff;
+    font-size: 20px;
+}
+
+.schedule-table td {
+    color: black;
+    font-size: 20px;
+}
+
+.schedule-table tr {
+    background-color: #fff9f9;
+
+}
+
+.schedule-table tr:hover {
+    background-color: #FFD700;
+}
+
+.schedule-table th, .schedule-table td {
+    text-align: center;
+}
+/* Tombol Selesai */
+.btn-confirm {
+    margin-top: 0;
+    background-color: #3ad91e; /* Warna emas */
+    border: 2px solid #000000;
+    border-radius: 5px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+}
+
+.btn-confirm:hover {
+    background-color: #279416; /* Warna hover */
+    color: white;
+}
+
+/* Status Selesai */
+.confirm-status {
+    font-size: 20px;
+    font-weight: bold;
+    color: #176d1a; /* Warna hijau */
+}
+
+.confirm-statusR {
+    font-size: 20px;
+    font-weight: bold;
+    color: #092381; /* Warna hijau */
+}
+/* Styling tombol Reschedule */
+.btn-reschedule {
+    font-size: 20px;
+    margin-top: 0;
+    background-color: #4FC3F7;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+}
+
+.btn-reschedule:hover {
+    color: white;
+    background-color: #095071;
+}
+
+/* Styling tombol Reschedule */
+.btn-reschedule1 {
+    font-size: 20px;
+    margin-top: 0;
+    background-color: #4FC3F7;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+}
+
+.btn-reschedule1:hover {
+    color: white;
+    background-color: #095071;
+}
+
+/* Sidebar Hover */
+.sidebar-link:hover {
+    background-color: #FFD700;
+    color: #333;
+}
+
+/* Pop-up Modal */
+.popup__form {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup__content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.4s ease;
+}
+
+.close {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    color: #333;
+    font-size: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close:hover {
+    color: #ff3b3f;
+    text-decoration: none;
+    cursor: pointer;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+
+/*jadwal pt */
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Membuat 7 kolom untuk hari Minggu hingga Sabtu */
+    gap: 5px;
+    width: 100%;
+
+}
+
+.calendar-day {
+    font-weight: bold;
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+}
+
+.calendar-date {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.calendar-date:hover {
+    background-color: #d4d4d4;
+}
+
+.today {
+    font-weight: bold;
+    border: 2px solid blue;
+    color: blue;
+    border-radius: 10%;
+}
+
+/* Tanggal yang sudah lewat di kalender */
+.calendar-date.past-date {
+    background-color: gray; /* Warna kuning */
+    color: white;
+    cursor: pointer;
+}
+
+.available-day {
+    background-color: #a6e22e; /* Warna hijau untuk tanggal yang tersedia */
+    color: black;
+    cursor: pointer;
+}
+
+.available-day:hover {
+    background-color: #415812; /* Warna hijau untuk tanggal yang tersedia */
+    color: white;
+    cursor: pointer;
+}
+
+.unavailable-day {
+    background-color: #e0e0e0; /* Warna abu-abu untuk tanggal yang tidak tersedia */
+    color: black;
+    cursor: pointer;
+
+}
+
+.unavailable-day:hover {
+    background-color: #646161; /* Warna abu-abu untuk tanggal yang tidak tersedia */
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+
+}
+
+.selected-day {
+    border: 2px solid #ff8c00; /* Garis batas untuk tanggal yang dipilih */
+}
+.past-available-day {
+    background-color: #004d00; /* Hijau gelap */
+    color: white;
+    cursor: pointer;
+}
+
+.past-unavailable-day {
+    background-color: #cccccc; /* Abu-abu gelap */
+    color: black;
+    cursor: not-allowed;
+}
+
+.today {
+    border: 5px solid blue;
+}
+
+
+.NamaBulan{
+    font-size: 25px;
+    font-weight: bold;
+}
+.calendar-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 150px 15px 150px;
+}
+
+.calendar-table {
+    margin: 0 auto; /* Pastikan tabel tetap terpusat */
+    width: 100%; /* Lebar tabel mengikuti lebar modal */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+#prevMonth, #nextMonth {
+    background-color: #FFD700; /* Warna tombol */
+    color: black; /* Warna teks */
+    border: none; /* Hilangkan border */
+    border-radius: 4px; /* Sudut tombol melengkung */
+    padding: 8px 10px 8px 10px; /* Ukuran padding */
+    margin: 5px 1px 1px 5px;
+    cursor: pointer;
+    font-size: 20px; /* Ukuran teks */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Efek hover */
+}
+
+#prevMonth:hover, #nextMonth:hover {
+    color: white;
+    background-color: #6e7605; /* Warna tombol saat hover */
+}
+
+.calendar-table {
+    width: 100%;
+    max-width: 600px; /* Batasi lebar tabel */
+    margin: 0 auto; /* Tengah-kan tabel kalender */
+}
+
+.calendar-table td{
+    text-align: center;
+    height: 50px;
+    margin: 0 auto; /* Tengah-kan tabel kalender */
+}
+
+/* Memperbesar button Kembali dan menambah jarak */
+#modalKalender .btn.btn-primary {
+    padding: 12px 24px; /* Memperbesar ukuran button */
+    font-size: 16px; /* Memperbesar ukuran teks */
+    margin-top: 20px; /* Menambahkan jarak dari kalender */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#modalKalender h2{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.color-legend {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    font-size: 20px;
+    padding-left: 10px;
+  }
+  
+  .color-legend div {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+  }
+  
+  .legend {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+  }
+  
+  .legend.available-day {
+    background-color: greenyellow; /* Warna untuk hari tersedia */
+  }
+  
+  .legend.unavailable-day {
+    background-color: #f0f0f0; /* Warna untuk hari tidak tersedia */
+    border: 1px solid #ccc;
+  }
+  
+  .legend.today {
+    background-color: blue; /* Warna untuk hari ini */
+  }
+
+  .jadwalpt-modal {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding-top: 150px;
+    opacity: 0;
+}
+.jadwalpt-modal.show {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+
+}
+
+/* Ketika modal ditutup */
+.jadwalpt-modal.hide {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+.jadwalpt-modal-content {
+
+    background-color: #121111;
+    padding: 40px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    margin: auto; /* Center the modal */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.jadwalpt-modal-content h2{
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+/* Memberi jarak antara checkbox dan button */
+#slotContainer {
+    margin-bottom: 20px; /* Tambahkan jarak di bawah slotContainer */
+}
+
+/* Memperbesar dan menambahkan padding pada button */
+#saveJadwalBtn {
+    padding: 12px 24px; /* Memperbesar ukuran padding button */
+    font-size: 20px; /* Memperbesar ukuran teks */
+    margin-top: 10px; /* Menambah jarak antara checkbox dan button */
+    display: block;
+}
+
+/* Memperbesar teks jam dan checkbox */
+#slotContainer label {
+    font-size: 25px; /* Memperbesar ukuran teks untuk label */
+    margin-left: 5px; /* Menambahkan sedikit jarak antara checkbox dan teks */
+}
+
+#slotContainer input[type="checkbox"] {
+    width: 40px; /* Memperbesar ukuran checkbox */
+    height: 40px; /* Memperbesar ukuran checkbox */
+    margin-right: 8px; /* Memberi jarak antara checkbox dan teks */
+}
+.notice-container {
+    margin-top: 20px; /* Jarak dari elemen sebelumnya */
+    padding: 15px 20px;
+    background-color: #f9f9f9; /* Warna latar belakang */
+    border: 2px solid #ffd700; /* Warna border sesuai desain */
+    border-radius: 8px; /* Membuat sudut melengkung */
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.notice-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #010101; /* Warna teks */
+    margin-bottom: 10px; /* Jarak ke daftar */
+    text-align: center;
+}
+
+.notice-list {
+    list-style: none; /* Hilangkan bullet bawaan */
+    padding: 0; /* Hilangkan padding default */
+    font-size: 18px;
+    color: #333; /* Warna teks */
+}
+
+.notice-list li {
+    margin-bottom: 8px; /* Jarak antar item */
+    line-height: 1.5; /* Tinggi baris */
+}
+
+/* Styling untuk tabel member yang booking */
+.booking-table {
+    background-color: white;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking-table th, .booking-table td {
+    padding: 12px 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.booking-table th {
+    background-color: #010101;
+    color: #fff;
+    font-size: 20px;
+}
+
+.booking-table td {
+    color: black;
+    font-size: 20px;
+}
+
+.booking-table tr:hover {
+    background-color: #e8c30f;
+}
+
+.booking-table tr{
+
+    background-color: white;
+}
+
+/* Membatasi lebar kolom Latihan */
+.booking-table td:nth-child(5) {
+    max-width: 300px; /* Atur lebar maksimum sesuai kebutuhan */
+    word-wrap: break-word; /* Membungkus teks jika terlalu panjang */
+    white-space: normal; /* Memastikan teks tidak terus dalam satu baris */
+}
+
+/* Styling untuk judul section */
+#booking-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFD700; /* Warna emas untuk judul */
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Modal Container */
+.custom-modal {
+    padding-top: 50px;
+    display: none; /* Default hidden */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparansi latar belakang */
+    overflow: auto;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    opacity: 0;
+}
+
+.custommodal-content {
+    background-color: #fff;
+    margin: 140px auto;
+    padding: 30px;
+    width: 36%;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.custom-modal.show {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+
+}
+
+/* Ketika modal ditutup */
+.custom-modal.hide {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+/* Modal Content */
+
+
+/* Modal Title */
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Textarea */
+.form-group textarea {
+    width: 600px;
+    padding: 10px;
+    font-size: 20px;
+    border: 4px solid black;
+    border-radius: 5px;
+    resize: none;
+}
+/* Button Save */
+.btn-save {
+    background-color: #40ce20;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-save:hover {
+    color: white;
+    background-color: #004d00;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #df3e3e;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: rgb(102, 9, 9);
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-container label {
+    font-weight: bold;
+    color: #ffd700; /* Warna kuning emas */
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.filter-container select {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    background-color: #222; /* Warna latar belakang hitam */
+    color: white; /* Warna teks putih */
+    outline: none;
+    cursor: pointer;
+}
+
+.filter-container select:hover {
+    background-color: #333; /* Sedikit lebih terang saat hover */
+}
+
+.filter-container select:focus {
+    border-color: #fff; /* Ganti warna border saat focus */
+}
+.d-none{
+    display: none;
+}
+
+.searchmember input[type="search"] {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+    margin-left: 5px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 3px solid #ffd700;
+    border-radius: 8px;
+    background-color: white;
+}
+.filterbulan{
+    font-size: 14px;
+    padding: 6px 12px;
+    border: 3px solid #ffd700;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+}
+
+.buttonlatihan {
+    width: 200px; /* Equal width */
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    color: black;
+    background-color: #FFD700;
+}
+
+.buttonlatihan:hover{
+    color: white;
+    background-color: #65570a;
+}
+
+.buttoneditlatihan {
+    text-align: center;
+    width: 35px; /* Equal width */
+    font-size: 20px;
+    padding: 10px 4px 10px 4px;
+    margin-left: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    color: black;
+    background-color: #FFD700;
+}
+.buttoneditlatihan:hover{
+    color: white;
+    background-color: #65570a;
+}

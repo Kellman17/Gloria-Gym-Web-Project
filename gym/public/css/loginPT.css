@@ -1,0 +1,171 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://i.pinimg.com/736x/af/1f/d8/af1fd8385b5e5e6c433c4ca4f28fc61c.jpg'); /* Ganti dengan background Anda */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8); /* Hitam transparan */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    position: relative; /* Pastikan form modal tetap di dalam konteksnya */
+    z-index: 1; /* Atur z-index lebih rendah dibandingkan swal */
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: translateY(20px); /* Awalnya posisinya lebih rendah */
+    animation: slideIn 0.5s forwards; /* Tambahkan animasi slide in */
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.swal2-container {
+    z-index: 1050 !important; /* Pastikan SweetAlert berada di atas elemen lainnya */
+    position: fixed; /* Modal tetap di layar */
+    top: 0;
+    left: 0;
+    height: 100%; 
+    width: 100%;
+    pointer-events: auto;
+}
+.auth-form {
+    width: 100%; /* Pastikan form memenuhi lebar container */
+}
+.auth-form h2 {
+    color: #FFD700; /* Warna emas */
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #FFD700; /* Warna emas */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-auth:hover {
+    color: white;
+    background-color: #665509;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: white;
+}
+
+p a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Jarak antar tombol */
+    gap: 10px; /* Opsional, untuk memberi jarak antar tombol */
+}
+
+.button-container .btn-auth1 {
+    flex: 1; /* Opsional, buat tombol memiliki lebar yang sama */
+    padding: 10px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container .cancel-btn {
+    flex: 1; /* Opsional, buat tombol memiliki lebar yang sama */
+    padding: 10px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #e60000;
+    color: black;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+    color: white;
+    font-weight: bold;
+    background-color: #6e0505;
+}
+
+.button-container .btn-auth1 {
+    background-color: #FFD700;
+    color: black;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button-container .btn-auth1:hover {
+    color: white;
+    font-weight: bold;
+    background-color: #665509;
+}

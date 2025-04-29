@@ -1,0 +1,411 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin: 20px 0;
+}
+
+.tambah{
+    margin-top: 30px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #ff3b3f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #e0292d;
+}
+
+/* Styling untuk form */
+.form-row {
+    display: flex;
+    flex-direction: column; /* Ubah menjadi kolom */
+    align-items: flex-start; /* Elemen label dan input disejajarkan */
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-row input[type="text"],
+.form-row input[type="file"],
+.form-row input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border 0.3s;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.form-row input:focus {
+    border-color: #ff3b3f;
+    outline: none;
+}
+
+/* Pop-up Modal */
+.popup__form {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup__content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.4s ease;
+}
+
+.close {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    color: #333;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close:hover {
+    color: #ff3b3f;
+    text-decoration: none;
+    cursor: pointer;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+
+/* Tabel PT */
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #ff3b3f;
+    color: white;
+}
+
+table img {
+    max-width: 100px;
+    border-radius: 5px;
+}
+.btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-schedule {
+    background-color: #28a745; /* Warna hijau */
+}
+
+.btn-update {
+    background-color: #007bff; /* Warna biru */
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Warna merah */
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Styling untuk modal update pt*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    position: relative;
+}
+
+/*jadwal pt */
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Membuat 7 kolom untuk hari Minggu hingga Sabtu */
+    gap: 5px;
+    width: 100%;
+}
+
+.calendar-day {
+    font-weight: bold;
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+}
+
+.calendar-date {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.calendar-date:hover {
+    background-color: #d4d4d4;
+}
+
+.today {
+    font-weight: bold;
+    border: 2px solid blue;
+    color: blue;
+    border-radius: 10%;
+}
+
+/* Tanggal yang sudah lewat di kalender */
+.calendar-date.past-date {
+    background-color: gray; /* Warna kuning */
+    color: white;
+    cursor: pointer;
+}
+
+.available-day {
+    background-color: #a6e22e; /* Warna hijau untuk tanggal yang tersedia */
+    cursor: pointer;
+}
+
+.unavailable-day {
+    background-color: #e0e0e0; /* Warna abu-abu untuk tanggal yang tidak tersedia */
+}
+
+.selected-day {
+    border: 2px solid #ff8c00; /* Garis batas untuk tanggal yang dipilih */
+}
+.past-available-day {
+    background-color: #004d00; /* Hijau gelap */
+    color: white;
+    cursor: pointer;
+}
+
+.past-unavailable-day {
+    background-color: #cccccc; /* Abu-abu gelap */
+    color: #666;
+    cursor: not-allowed;
+}
+
+.today {
+    border: 5px solid blue;
+}
+
+
+.NamaBulan{
+    font-size: 25px;
+}
+.calendar-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.calendar-table {
+    margin: 0 auto; /* Pastikan tabel tetap terpusat */
+    width: 100%; /* Lebar tabel mengikuti lebar modal */
+}
+
+
+
+#prevMonth, #nextMonth {
+    background-color: #f97070; /* Warna tombol */
+    color: white; /* Warna teks */
+    border: none; /* Hilangkan border */
+    border-radius: 4px; /* Sudut tombol melengkung */
+    padding: 8px 16px; /* Ukuran padding */
+    margin: 5px 1px 1px 5px;
+    cursor: pointer;
+    font-size: 14px; /* Ukuran teks */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Efek hover */
+}
+
+#prevMonth:hover, #nextMonth:hover {
+    background-color: #f3091c; /* Warna tombol saat hover */
+}
+
+.calendar-table {
+    width: 100%;
+    max-width: 600px; /* Batasi lebar tabel */
+    margin: 0 auto; /* Tengah-kan tabel kalender */
+}
+
+
+
+.jadwalpt-modal {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding-top: 10px;
+}
+
+.jadwalpt-modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    margin: auto; /* Center the modal */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+
+.close {
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+/* Memberi jarak antara checkbox dan button */
+#slotContainer {
+    margin-bottom: 20px; /* Tambahkan jarak di bawah slotContainer */
+}
+
+/* Memperbesar dan menambahkan padding pada button */
+#saveJadwalBtn {
+    padding: 12px 24px; /* Memperbesar ukuran padding button */
+    font-size: 16px; /* Memperbesar ukuran teks */
+    margin-top: 10px; /* Menambah jarak antara checkbox dan button */
+    display: block;
+}
+
+/* Memperbesar teks jam dan checkbox */
+#slotContainer label {
+    font-size: 16px; /* Memperbesar ukuran teks untuk label */
+    margin-left: 5px; /* Menambahkan sedikit jarak antara checkbox dan teks */
+}
+
+#slotContainer input[type="checkbox"] {
+    width: 20px; /* Memperbesar ukuran checkbox */
+    height: 20px; /* Memperbesar ukuran checkbox */
+    margin-right: 8px; /* Memberi jarak antara checkbox dan teks */
+}
+
+/* Memperbesar button Kembali dan menambah jarak */
+#modalKalender .btn.btn-primary {
+    padding: 12px 24px; /* Memperbesar ukuran button */
+    font-size: 16px; /* Memperbesar ukuran teks */
+    margin-top: 20px; /* Menambahkan jarak dari kalender */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.color-legend {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    font-size: 14px;
+    padding-left: 10px;
+  }
+  
+  .color-legend div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .legend {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+  }
+  
+  .legend.available-day {
+    background-color: greenyellow; /* Warna untuk hari tersedia */
+  }
+  
+  .legend.unavailable-day {
+    background-color: #f0f0f0; /* Warna untuk hari tidak tersedia */
+    border: 1px solid #ccc;
+  }
+  
+  .legend.today {
+    background-color: blue; /* Warna untuk hari ini */
+  }

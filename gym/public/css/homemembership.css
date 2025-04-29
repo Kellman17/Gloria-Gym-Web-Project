@@ -1,0 +1,51 @@
+/* Sembunyikan "showing entries" */
+.table-filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* Styling untuk filter input */
+#filter-class, #filter-instructor, #filter-date, #filter-time {
+    padding: 8px 12px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Styling untuk tombol dropdown (filter waktu) */
+#filter-time {
+    width: 150px;
+    background: #fff;
+}
+
+.d-none{
+    display: none;
+}
+.class-schedule-table {
+    width: 80%; /* Sesuaikan dengan kebutuhan */
+    margin: 0 auto; /* Supaya tabel berada di tengah */
+}
+
+.class-schedule-table th, 
+.class-schedule-table td {
+    text-align: center; /* Ratakan teks ke tengah */
+}
+
+/* Gaya pagination */
+/* Gaya pagination */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    background-color: white;
+    border: 1px solid #45a049; /* Warna border */
+    padding: 6px 12px;
+    margin: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
